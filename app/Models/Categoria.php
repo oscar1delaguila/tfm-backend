@@ -13,7 +13,8 @@ class Categoria extends Model
 
     public function juguetes() {
 
-        return $this->belongsToMany(Juguete::class);
+        //una categoria tiene muchos juguetes
+        return $this->hasMany(Juguete::class, 'id');
         
     }
 

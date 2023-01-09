@@ -20,16 +20,33 @@ class JuguetesSeeder extends Seeder
         \App\Models\Juguete::factory(100)->create();
 
         //Llenamos la tabla pivot categoria_juguete
+        /*
         foreach (\App\Models\Juguete::all() as $juguete) {
 
             //de la tabla categorias la ordenamos aleatoriamnete y cogemos de 1 a 3 categorias solo con el campo id
-            $categorias = \App\Models\Categoria::inRandomOrder()->take(rand(1,3))->pluck('id');
+            $categoriaId = \App\Models\Categoria::inRandomOrder()->take(1)->pluck('id');
 
             //Asignamos de 1 a 3 categorias para cada noticia.
             //A través de la función 'categorias' del modelo Juguete que creamos.
-            $juguete->categorias()->attach($categorias);
+            //$juguete->categorias()->attach($categorias);
+            $juguete->categoria_id = $categoriaId;
 
         }
+        */
+        
+
+        //Llenamos la tabla pivot categoria_juguete
+        /*foreach (\App\Models\Juguete::all() as $juguete) {
+
+            //de la tabla categorias la ordenamos aleatoriamnete y cogemos de 1 a 3 categorias solo con el campo id
+            $experiencias = \App\Models\Experiencia::inRandomOrder()->take(rand(1,4))->pluck('id');
+
+            //Asignamos de 1 a 3 categorias para cada noticia.
+            //A través de la función 'categorias' del modelo Juguete que creamos.
+            $juguete->experiencias()->attach($experiencias);
+
+        }
+        */
 
     }
 }

@@ -18,8 +18,10 @@ class CategoriasResource extends JsonResource
         return [
 
             'id' => $this->id,
-            'nombre_categoria' => $this->nombre_categoria
-
+            'nombre_categoria' => $this->nombre_categoria,
+            'subcategoria1' =>$this->subcategoria1,
+            'subcategoria2' =>$this->subcategoria2
+ 
         ];
     }
 }

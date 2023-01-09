@@ -12,8 +12,23 @@ class Juguete extends Model
 
     public function categorias() {
 
-        return $this->belongsToMany(Categoria::class);
+        //Un juguete pertenece a una categoria
+        return $this->belongsTo(Categoria::class, 'categoria_id');
         
     }
+
+    public function experiencias() {
+
+        return $this->hasMany(Experiencia::class, 'experiencia_id');
+        
+    }
+
+    public function favoritos() {
+
+        return $this->hasMany(Favorito::class, 'favorito_id');
+        
+    }
+
+
 
 }

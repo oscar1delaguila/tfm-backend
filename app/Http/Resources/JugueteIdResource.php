@@ -18,12 +18,17 @@ class JugueteIdResource extends JsonResource
         //return parent::toArray($request);
         return [
 
-        'id' => $this->id,
-        'nombre_juguete' => $this->nombre_juguete,
-        'fecha_publicacion' => $this->fecha_publicacion,
-        'descripcion' => $this->descripcion,
-        'categorias' => CategoriasResource::collection($this->categorias()->get()),
-        'path_imagen' => $this->path_imagen
+            'id' => $this->id,
+            'titulo' => $this->titulo,
+            'descripcion' => $this->descripcion,
+            //'categoria' => CategoriasResource::collection($this->categorias()->get()),
+            'categorias' => $this->categorias()->findOrFail($this->categoria_id),
+            'path_imagen' => $this->path_imagen,
+            'precio' => $this->precio,
+            'num_votaciones' => $this->num_votaciones,
+            'marca' => $this->marca,
+            'puntuacion' => $this->puntuacion,
+            'imagen1' => $this->imagen1
         
         ];
 

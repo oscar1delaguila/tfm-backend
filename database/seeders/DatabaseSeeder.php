@@ -26,15 +26,22 @@ class DatabaseSeeder extends Seeder
         
         $this->truncateTables([
             'migrations',
-            'categorias',
             'juguetes',
-            'categoria_juguete'
+            'experiencias',
+            //'users',
+            'favoritos',
+            'categorias'
+            //'categoria_juguete',
+            //'experiencia_juguete'
         ]);
 
 
         $this->call(CategoriasSeeder::class);
         $this->call(JuguetesSeeder::class);
-
+        //$this->call(UsersSeeder::class);
+        $this->call(ExperienciasSeeder::class);
+        //$this->call(FavoritosSeeder::class);
+        
 
     }
 

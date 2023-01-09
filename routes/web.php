@@ -6,6 +6,13 @@ use App\Http\Resources\JuguetesResource;
 use App\Http\Resources\JugueteIdResource;
 use App\Http\Resources\CategoriasResource;
 use App\Models\Categoria;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
+
+
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 
 
@@ -20,17 +27,17 @@ use App\Models\Categoria;
 |
 */
 
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 
 
 //////////
 //API JSON 
 //////////
-
+/*
 //juguetes/<page>
 Route::get('/juguetes/{page}', function ($page) {
 
@@ -63,4 +70,16 @@ Route::get('/categorias',  function () {
 
 
 
+*/
+/*
+Route::get('/contactanos/{id}', function () {
 
+    $correo = new ContactanosMailable;
+    //destinatario
+    Mail::to('oscar1delaguila@gmail.com')->send($correo);
+    //Mail::to(DB::table('user')->find($idUser)->select('email')->get())->send($correo);
+
+    return "Mensaje enviado";
+
+});
+*/

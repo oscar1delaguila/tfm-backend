@@ -16,11 +16,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('apellidos');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->timestamp('fecha_nacimiento');
+            $table->boolean('newsletter')->default(false);
+            $table->timestamp('email_verified_at')->nullable(); //el email se verifica una vez registrado.
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            //$table->timestamps(); //fecha del registro
+            
         });
     }
 
