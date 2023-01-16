@@ -59,7 +59,7 @@ return new class extends Migration
             $table->string('imagen6')->nullable();
             $table->string('imagen7')->nullable();
             $table->string('imagen8')->nullable();
-            $table->boolean('publicado')->default(true);
+            $table->boolean('publicado')->default(false);
             $table->string('path_amazon')->nullable();
             //$table->timestamps();
 

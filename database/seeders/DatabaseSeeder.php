@@ -37,9 +37,9 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call(CategoriasSeeder::class);
-        $this->call(JuguetesSeeder::class);
+        //$this->call(JuguetesSeeder::class);
         //$this->call(UsersSeeder::class);
-        $this->call(ExperienciasSeeder::class);
+        //$this->call(ExperienciasSeeder::class);
         //$this->call(FavoritosSeeder::class);
         
 

@@ -18,7 +18,7 @@ class ExperienciaController extends Controller
     {
         
         $limitePorPagina = 12;
-        $experiencias = DB::table('experiencias')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
+        $experiencias = DB::table('experiencias')->orderBy('publicado','desc')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
          //$experiencias = Experiencia::all();
  
  
@@ -30,7 +30,7 @@ class ExperienciaController extends Controller
     {
 
         $limitePorPagina = 12;
-        $experiencias = DB::table('experiencias')->where('user_id','=', $idUsuario)
+        $experiencias = DB::table('experiencias')->orderBy('publicado','desc')->where('user_id','=', $idUsuario)
                                                  ->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)
                                                  ->get();
          return $experiencias;

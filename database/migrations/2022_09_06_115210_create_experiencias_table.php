@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp('fecha_publicacion');
             $table->string('imagen_experiencia',255)->nullable();
             $table->float('valoracion',3, 1);
-            $table->boolean('publicado')->default(true);
+            $table->boolean('publicado')->default(false);
             
             //$table->timestamps();
             

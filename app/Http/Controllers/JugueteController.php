@@ -24,7 +24,7 @@ class JugueteController extends Controller
         $limitePorPagina = 12; 
        //$juguetes = Juguete::all();
 
-       $juguetes = DB::table('juguetes')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
+       $juguetes = DB::table('juguetes')->orderBy('publicado','desc')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
 
        //# Offset Pagination...
        //select * from users order by id asc limit 15 offset 15;
@@ -44,7 +44,7 @@ class JugueteController extends Controller
 
         if (!strcmp($literalABuscar  ,"Categorías")) {
 
-                $juguetes = DB::table('juguetes')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
+                $juguetes = DB::table('juguetes')->orderBy('publicado','desc')->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
 
 
         } else {
@@ -73,7 +73,7 @@ class JugueteController extends Controller
 
       if (strcmp($literalABuscar,"")) {
 
-        $juguetes = DB::table('juguetes')->where('titulo','like', '%'.$literalABuscar.'%')
+        $juguetes = DB::table('juguetes')->orderBy('publicado','desc')->where('titulo','like', '%'.$literalABuscar.'%')
                                          //->orWhere('descripcion','like', '%'.$literalABuscar.'%')   
                                          ->offset(($page -1) * $limitePorPagina)->limit($limitePorPagina)->get();
 
